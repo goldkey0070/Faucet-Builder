@@ -152,7 +152,8 @@ foreach($block_browser as $new){
        header('Refresh: 30;url=put your faucet url here'); //change to your faucet url
     $view['main']['result_html'] = '<div class="row text-center"><div class="col-sm-6 col-md-offset-3 bg-success"><p><span style="color: #e017eb;">Congratulations you have won '.$amount.' Satoshis !!!</p></div></div>';
       $url = get_main_url()."?r=".$username;
-      $view['main']['ref_link'] = '<div class="row text-center"><div class="col-sm-6 col-md-offset-3 bg-success"><p><span style="color: #e017eb;"></a></span></h4> Non-Xapo Users Will Be Paid Once Your Account Reaches 5,430 and Its Automatic. <a href="http://www.bitcoinfaucetexchange.com/Balance.php" target="_blank"><span>CLICK HERE FOR NON-XAPO BALANCE</span></a>. Share your referral link and earn a '.$settings["referral_percentage"].'% lifetime bonus. Your referal link is '.$url.'</p></div></div>';
+      //change to your balance page the line bellow this
+      $view['main']['ref_link'] = '<div class="row text-center"><div class="col-sm-6 col-md-offset-3 bg-success"><p><span style="color: #e017eb;"></a></span></h4> Non-Xapo Users Will Be Paid Once Your Account Reaches 5,430 and Its Automatic. <a href="Your faucet url/Balance.php" target="_blank"><span>CLICK HERE FOR NON-XAPO BALANCE</span></a>. Share your referral link and earn a '.$settings["referral_percentage"].'% lifetime bonus. Your referal link is '.$url.'</p></div></div>'; 
 
       $q = $sql->prepare("INSERT into users (username, ip, claimed_at) values (?,?,?) on duplicate key update ip = values(ip), claimed_at = values(claimed_at)");
       $q->execute(array($username, $ip, $time));

@@ -9,4 +9,6 @@ Firefox will not work with this script because of bots using firefox. It will te
 
 Made so right click wont work or any ctr keys that can hurt the faucet.
 
+timer hack  flaw has been fixed
+
 go into index.php, balance.php and Balance-non-Xapo-Faucet-Users.php and change where it says change

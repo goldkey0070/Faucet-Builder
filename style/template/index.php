@@ -202,7 +202,7 @@ document.onmouseup = mousehandler;
         <?php echo $settings["top_horizontal_ad"];?>
     </div>
 
-
+      <div><p class="alert alert-info">Balance: <?php echo get_bal(); ?></p></div>
       <div><strong><p class="alert alert-info">Your possible rewards <?php echo $rewards["reward_list_html"]; ?></p></strong></div>
       <div>
         <strong><p>Earning bitcoins is simple:</p></strong>
@@ -221,6 +221,16 @@ document.onmouseup = mousehandler;
 
               <center class="captcha"><script type="text/javascript" src="http://api.solvemedia.com/papi/challenge.script?k=<?php echo $settings['solvemedia_challenge_key']?>"></script></center></div>
               </div>
+              <?php 
+if (getenv(HTTP_X_FORWARDED_FOR)) { 
+$pipaddress = getenv(HTTP_X_FORWARDED_FOR); 
+$ipaddress = getenv(REMOTE_ADDR); 
+echo "<h3><font color='white'>Your Proxy IPaddress is : ".$pipaddress. "(via $ipaddress)</b></h3>" ; 
+} else { 
+$ipaddress = getenv(REMOTE_ADDR); 
+echo "<h3><font color='white'><b>Your IP address is : $ipaddress</b></h3>"; 
+} 
+?> 
             <div>
               <div>
                 <button class="btn btn-<?php echo $settings["button_background"]; ?>" type="submit"><?php echo $settings["submit_button_text"]; ?></button>
@@ -239,6 +249,7 @@ document.onmouseup = mousehandler;
         <?php echo $settings["right_vertical_ad"];?>
     </div>
   </div>
+
   <footer><strong><p class="text-center">Copyright &#169; 2015 <?php echo $settings["title"];?> <a href=<?php echo $settings["contact_mail"];?>>Contact us</a></p></strong></footer>
 </div>
 </body>

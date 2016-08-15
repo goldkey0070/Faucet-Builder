@@ -149,7 +149,7 @@ foreach($block_browser as $new){
     }
 
     if($response->success){
-       header('Refresh: 30;url=put your faucet url here'); //change to your faucet url
+       header('Refresh: 30;url=http://www.bitcoinfaucetexchange.com/ref/'); //change to your faucet url
     $view['main']['result_html'] = '<div class="row text-center"><div class="col-sm-6 col-md-offset-3 bg-success"><p><span style="color: #e017eb;">Congratulations you have won '.$amount.' Satoshis !!!</p></div></div>';
       $url = get_main_url()."?r=".$username;
       //change to your balance page the line bellow this

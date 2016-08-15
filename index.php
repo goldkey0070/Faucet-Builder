@@ -2,7 +2,7 @@
 require 'config.php';
 require 'functions.php';
 require 'sql.php';
-
+require 'xbal.php';
 if(!validHash($myHashKey)){
   die("Invalid Hash key. Open your config.php file and enter a 32 digit key made with numbers or letters from A to F.<br>Suggestion: use some random text generator to make it safer.");
 }

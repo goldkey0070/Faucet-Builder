@@ -76,6 +76,13 @@ if(empty($addyBalance)) {
       <br>
       <input type="submit" value="Check Balance">
    </form>
+     <div>
+     	<center><strong><p class="alert alert-info">
+	    <?php
+	      $jsonresponse = json_decode($response);
+	      echo 'Your current balance = ' . $jsonresponse->accrued_balance . ' Cashout at = ' . $jsonresponse->payment_threshold;
+	     ?> 
+	 </p></strong></center>
+     </div>
   </body>
-
   </html>

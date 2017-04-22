@@ -1,43 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head><title>Balance check for non xapo users</title>
+<head>
+<title>No</title>
 <link rel="stylesheet" href="style/css/bootstrap.min.css" media="screen">
   <link rel="stylesheet" href="style/css/bootstrap.css" media="screen">
   <link rel="stylesheet" href="style/css/myCssClass.css" media="screen">
-  <meta property="og:url"                content="" /> <!--your domain-->
-	<meta property="og:title"              content="" /> <!--Your Title -->
-	<meta property="og:description"        content="" /> <!--description-->
-	<meta property="og:image"              content="" /> <!--Image that will show on facebook-->
-	<meta name="alexaVerifyID" content=""/>
-	<meta name="description" content=""> <!--description for search engines-->
-	<meta name="keywords" content=""/> <!--keywords for search engines-->
-	<meta name="google-site-verification" content="" />
-	
-	
-	
+  
+     
        
+<meta http-equiv="content-type" content="text/html;charset="UTF-8">
 
-    <META http-equiv="Content-type" content="text/html; charset=iso-8859-1">
-
-        
-		<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
-        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
-       
-		<script type="text/javascript">
-if ( window.self !== window.top ) {
-    window.top.location.href=window.location.href;
-}
-</script>
-
-
-
-<style>
-body {
-    background-color: lightblue;
-}
-</style>
-</head>
-    
+ 
+  
 <?php
 require_once("Balance-non-Xapo-Faucet-Users.php");
 
@@ -61,21 +35,25 @@ if(empty($addyBalance)) {
    ));
    $response = curl_exec($ch);
   
-  print_r($response);
+ 
+  echo "<p><h2><font color=lime >$response; </font></h2></p>";  
 }
 
 ?>
 
 
 <body>
-<h1>ENJOY!</h1>
-
-<br>
-   <form action="<?php echo htmlentities($_SERVER['PHP_SELF']);?>" method="POST">
-       Non-Xapo Account Check For Faucet: <input type="text" name="addyBalance">
-      <br>
+<center><h1><font color="blue">ENJOY!</h1>
+ <lable><h2>Non-Xapo Address Check For Balance In Faucet:</h2></lable>
+  <form action="<?php echo htmlentities($_SERVER['PHP_SELF']);?>" method="post">
+    <div>
+      <input type="text" name="addyBalance" class="form-control text-center" placeholder="Enter your BTC Address Only !"></div>
+     </div>
       <input type="submit" value="Check Balance">
-   </form>
+     
+     </font>
+   </form></center>
+  
   </body>
 
   </html>
